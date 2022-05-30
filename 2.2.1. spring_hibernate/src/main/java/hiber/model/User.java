@@ -75,6 +75,9 @@ public class User {
 
    @Override
    public String toString() {
-      return getId() + ". " + getFirstName() + " " + getLastName() + ", " + getEmail() + "; " + getCar();
+      return "First Name = " + getFirstName() + "\n"
+              +  "Last Name = " + getLastName() + "\n"
+              + "Email = " + getEmail() + "\n"
+              + "Car = " + getCar();
    }
 }

@@ -29,12 +29,12 @@ public class UserDaoImp implements UserDao {
 
    @Override
    @SuppressWarnings("unchecked")
-   public void getByModelAndSeries(String carModel, int carSeries) {
+   public User getByModelAndSeries(String carModel, int carSeries) {
       String hql = "FROM Car car LEFT OUTER JOIN FETCH car.user WHERE car.model=:carModel and car.series=:carSeries";
       Car car = sessionFactory.getCurrentSession().createQuery(hql, Car.class)
               .setParameter("carModel",carModel)
               .setParameter("carSeries", carSeries)
               .uniqueResult();
-      System.out.println("\n" + car.getUser());
+      return car.getUser();
    }
 }
